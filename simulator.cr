@@ -144,7 +144,28 @@ class GroupsSimulator
 
     return group
   end
+
+  def get_name_only(group)
+    names = [] of String
+    group.each { |t| names << t.name }
+    return names
+  end
+
+  def create_groups
+    groups = [] of String
+    # Create Group A first
+    group_a = create_group(true)
+    puts get_name_only(group_a)
+    puts get_name_only(group_a).class
+    groups << get_name_only(group_a)
+    # Then, from B to H
+    7.times do
+      group = create_group
+      groups << get_name_only(group)
+    end
+    return groups
+  end
 end
 
 simulator = GroupsSimulator.new
-puts simulator.create_group
+puts simulator.create_groups
