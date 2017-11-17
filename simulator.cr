@@ -30,7 +30,6 @@ class GroupsSimulator
 
   def load_pots
     @pot1 = File.read_lines("pot1.pot")
-    #puts @pot1
     @pot2 = File.read_lines("pot2.pot")
     @pot3 = File.read_lines("pot3.pot")
     @pot4 = File.read_lines("pot4.pot")
@@ -60,10 +59,6 @@ class GroupsSimulator
       team = Team.new(team_info[0], team_info[1])
       @teams4 << team
     end
-    #puts "#{@teams1}\n\n"
-    #puts "#{@teams2}\n\n"
-    #puts "#{@teams3}\n\n"
-    #puts "#{@teams4}\n\n"
   end
 
   def get_random_team(pot)
