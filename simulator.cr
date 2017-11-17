@@ -28,14 +28,19 @@ class GroupsSimulator
   @teams3 = [] of Team
   @teams4 = [] of Team
 
-  def load_pots
+  def initialize
+    load_pots
+    parse_pots
+  end
+
+  private def load_pots
     @pot1 = File.read_lines("pot1.pot")
     @pot2 = File.read_lines("pot2.pot")
     @pot3 = File.read_lines("pot3.pot")
     @pot4 = File.read_lines("pot4.pot")
   end
 
-  def parse_pots
+  private def parse_pots
     @pot1.each do |t|
       team_info = t.split(",")
       team = Team.new(team_info[0], team_info[1])
@@ -61,11 +66,11 @@ class GroupsSimulator
     end
   end
 
-  def get_random_team(pot)
+  private def get_random_team(pot)
     return pot.sample(1)[0]
   end
 
-  def count_teams_per_federation(group)
+  private def count_teams_per_federation(group)
     count = {
       "UEFA" => 0,
       "CONMEBOL" => 0,
@@ -80,7 +85,7 @@ class GroupsSimulator
     return count
   end
 
-  def valid_team(team, group)
+  private def valid_team(team, group)
     # Count each federation's teams in the group
     count = count_teams_per_federation(group)
     # If team is from UEFA, it's valid if there are 0 or 1 UEFA teams in the group
@@ -142,6 +147,4 @@ class GroupsSimulator
 end
 
 simulator = GroupsSimulator.new
-simulator.load_pots
-simulator.parse_pots
 puts simulator.create_group
