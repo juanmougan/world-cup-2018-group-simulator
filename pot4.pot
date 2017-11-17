@@ -1,0 +1,8 @@
+Serbia,UEFA
+Nigeria,CAF
+Australia,AFC
+Japón,AFC
+Marruecos,CAF
+Panamá,CONCACAF
+Corea del Sur,AFC
+Arabia Saudita,AFC

@@ -1,0 +1,8 @@
+Dinamarca,UEFA
+Islandia,UEFA
+Costa Rica,CONCACAF
+Suecia,UEFA
+Túnez,CAF
+Egipto,CAF
+Senegal,CAF
+Irán,AFC
