@@ -152,15 +152,11 @@ class GroupsSimulator
   end
 
   def create_groups
-    #groups = [] of String
+    # This was the way to create an Array of Arrays
     groups = Array(Array(String)).new
     # Create Group A first
-    #puts "Type of gropus is: #{typeof(groups)}"
     group_a = create_group(true)
-    #puts get_name_only(group_a)
-    #puts get_name_only(group_a).class
     groups << get_name_only(group_a)
-    #puts "Class of array is: #{typeof(get_name_only(group_a))}"
     # Then, from B to H
     7.times do
       group = create_group
