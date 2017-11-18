@@ -1,8 +1,17 @@
 name: world-cup-2018-group-simulator
 version: 0.1.0
 
+authors:
+  - Juan Manuel Mougan <juanmougan@gmail.com>
+
 dependencies:
     kemal:
       github: kemalcr/kemal
+
+targets:
+  world-cup-2018-group-simulator:
+    main: index.cr
+
+crystal: 0.23.1
 
 license: MIT
