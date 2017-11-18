@@ -162,9 +162,8 @@ class GroupsSimulator
       group = create_group
       groups << get_name_only(group)
     end
+    puts "Groups created!"
+    puts groups
     return groups
   end
 end
-
-simulator = GroupsSimulator.new
-puts simulator.create_groups
