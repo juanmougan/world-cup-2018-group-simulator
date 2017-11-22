@@ -12,6 +12,7 @@ OptionParser.parse! do |opts|
 end
 
 get "/groups" do |env|
+  puts "GET on /groups"
   env.response.content_type = "application/json"
   simulator = GroupsSimulator.new
   simulator.create_groups.to_json

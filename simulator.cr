@@ -156,14 +156,16 @@ class GroupsSimulator
     groups = Array(Array(String)).new
     # Create Group A first
     group_a = create_group(true)
-    groups << get_name_only(group_a)
+    named_group_a = get_name_only(group_a)
+    puts "Group A: #{named_group_a}"
+    groups << named_group_a
     # Then, from B to H
     7.times do
       group = create_group
-      groups << get_name_only(group)
+      named_group = get_name_only(group)
+      puts "Group: #{named_group}"
+      groups << named_group
     end
-    puts "Groups created!"
-    puts groups
     return groups
   end
 end
