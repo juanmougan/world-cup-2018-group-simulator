@@ -151,6 +151,10 @@ class GroupsSimulator
     return names
   end
 
+  def index_to_char(index)
+    return 'a' + index
+  end
+
   def create_groups
     # This was the way to create an Array of Arrays
     groups = Array(Array(String)).new
@@ -160,10 +164,10 @@ class GroupsSimulator
     puts "Group A: #{named_group_a}"
     groups << named_group_a
     # Then, from B to H
-    7.times do
+    7.times do |i|
       group = create_group
       named_group = get_name_only(group)
-      puts "Group: #{named_group}"
+      puts "Group #{index_to_char(i+1)}: #{named_group}"
       groups << named_group
     end
     return groups
