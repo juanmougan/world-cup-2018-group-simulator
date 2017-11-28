@@ -167,7 +167,7 @@ class GroupsSimulator
     7.times do |i|
       group = create_group
       named_group = get_name_only(group)
-      puts "Group #{index_to_char(i+1)}: #{named_group}"
+      puts "Group #{index_to_char(i+1).upcase}: #{named_group}"
       groups << named_group
     end
     return groups
