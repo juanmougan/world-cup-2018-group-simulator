@@ -1,0 +1,8 @@
+España,UEFA
+Perú,CONMEBOL
+Suiza,UEFA
+Inglaterra,UEFA
+Colombia,CONMEBOL
+México,CONCACAF
+Uruguay,CONMEBOL
+Croacia,UEFA

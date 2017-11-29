@@ -10,7 +10,7 @@ dependencies:
 
 targets:
   world-cup-2018-group-simulator:
-    main: index.cr
+    main: ./src/index.cr
 
 crystal: 0.23.1
 
