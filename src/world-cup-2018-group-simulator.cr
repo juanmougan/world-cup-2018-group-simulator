@@ -1,15 +1,8 @@
 require "kemal"
 require "./simulator"
-require "option_parser"
 
 bind = "0.0.0.0"
-port = 8080
-
-OptionParser.parse do |opts|
-  opts.on("-p PORT", "--port PORT", "define port to run server") do |opt|
-    port = opt.to_i
-  end
-end
+Kemal.config.port = ENV["PORT"]?.try(&.to_i) || 3000
 
 get "/groups" do |env|
   puts "GET on /groups"
