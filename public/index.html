@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+    <head>
+        <meta charset="utf-8">
+        <title>Simulador de grupos - Mundial 2022</title>
+        <script>
+            fetch('http://localhost:3000/groups')
+                .then(response => response.json())
+                .then(data => console.log(data));
+        </script>
+    </head>
+    <body>
+        <h1>Simulador de grupos - Mundial 2022</h1>
+        <div class="world-cup-groups"></div>
+    </body>
+</html>

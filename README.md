@@ -6,23 +6,23 @@ Simulates the possible World Cup's fixture
 1. Install Crystal, e.g. in Mac OS
 
 ```
-    $ brew update
-    $ brew install crystal-lang
+    brew update
+    brew install crystal-lang
 ```
 
 2. Clone the repo and install the dependencies (Kemal only for this moment)
 
 ```
-    $ shards install
+    shards install
 ```
 
 3. Run the web app
 
 ```
-    $ crystal run index.cr
+    crystal run src/index.cr
 ```
 
-3. Feel link [Don Julio](https://en.wikipedia.org/wiki/Julio_Grondona) for a little time (??)
+3. Browse to the homepage and take a look at the results
 
 ```
     http://localhost:3000/groups

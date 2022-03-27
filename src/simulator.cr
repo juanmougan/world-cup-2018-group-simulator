@@ -90,10 +90,31 @@ class GroupsSimulator
     count = count_teams_per_federation(group)
     # If team is from UEFA, it's valid if there are 0 or 1 UEFA teams in the group
     if team.uefa?
+      count_uefa = count["UEFA"]
       return count["UEFA"] == 0 || count["UEFA"] == 1
     else
       return count[team.federation] == 0
     end
+  end
+
+  private def get_valid_teams(teams, group)
+    all_valid_teams = teams.map{|t| valid_team(t, group)}
+    return teams.select{|t| valid_team(t, group)}
+  end
+
+  private def get_valid_random_team(teams, group)
+    valid_teams = get_valid_teams(teams, group)
+    # FIXME there's a bug here which I couldn't figure out...
+    if valid_teams.size == 0
+      raise "Couldn't get any valid team!"
+    end
+    return get_random_team(valid_teams)
+  end
+
+  private def add_valid_random_team_from_group(teams, group)
+    random_team = get_valid_random_team(teams, group)
+    group << random_team
+    teams.delete(random_team)
   end
 
   def create_group(group_a = false)
@@ -107,40 +128,23 @@ class GroupsSimulator
     # First, let's add pot 1
     if group_a
       first_team = @teams1[0]     # Horrible hack, Rusia is the first
-      group << first_team  # TODO generalize this to the next world cup :)
-      @teams1.delete(first_team)
     else
       first_team = get_random_team(@teams1)
-      group << first_team
-      @teams1.delete(first_team)
     end
+    group << first_team
+    @teams1.delete(first_team)
 
     # TODO this sucks, because I'm keeping the pots as separated arrays
     # Use an array of arrays
-    second_team = get_random_team(@teams2)
-    while !valid_team(second_team, group)
-      second_team = get_random_team(@teams2)
-    end
-    group << second_team
-    @teams2.delete(second_team)
+    add_valid_random_team_from_group(@teams2, group)
 
     # TODO this sucks, because I'm keeping the pots as separated arrays
     # Use an array of arrays
-    third_team = get_random_team(@teams3)
-    while !valid_team(third_team, group)
-      third_team = get_random_team(@teams3)
-    end
-    group << third_team
-    @teams3.delete(third_team)
+    add_valid_random_team_from_group(@teams3, group)
 
     # TODO this sucks, because I'm keeping the pots as separated arrays
     # Use an array of arrays
-    fourth_team = get_random_team(@teams4)
-    while !valid_team(fourth_team, group)
-      fourth_team = get_random_team(@teams4)
-    end
-    group << fourth_team
-    @teams4.delete(fourth_team)
+    add_valid_random_team_from_group(@teams4, group)
 
     return group
   end
