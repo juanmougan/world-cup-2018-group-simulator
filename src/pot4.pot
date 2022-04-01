@@ -1,8 +1,8 @@
-Serbia,UEFA
-Nigeria,CAF
-Australia,AFC
-Japón,AFC
-Marruecos,CAF
-Panamá,CONCACAF
-Corea del Sur,AFC
+Camerún,CAF
+Canadá,CONCACAF
+Ecuador,CONMEBOL
 Arabia Saudita,AFC
+Ghana,CAF
+Gales o Escocia o Ucrania,UEFA
+Nueva Zelanda o Costa Rica,CONCACAF
+Perú o Emiratos Árabes Unidos o Australia,CONMEBOL

@@ -1,8 +1,8 @@
-Rusia,UEFA
-Alemania,UEFA
+Qatar,AFC
 Brasil,CONMEBOL
-Portugal,UEFA
-Argentina,CONMEBOL
 Bélgica,UEFA
-Polonia,UEFA
 Francia,UEFA
+Argentina,CONMEBOL
+Inglaterra,UEFA
+España,UEFA
+Portugal,UEFA
